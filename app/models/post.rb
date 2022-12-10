@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
     belongs_to :author
+    belongs_to :category
     has_many :post_tags
 
     validates :author_id, presence: true
