@@ -11,13 +11,14 @@ Author.destroy_all
 
 puts "🌱 Seeding data.."
 
-# categories = ["Software Development", "Cyber Security", "Graphics Design", "Tech & Business"]
+categories = ["Software Development", "Cyber Security", "Graphics Design", "Tech & Business"]
 
 posts = []
 10.times do
-    posts << Post.create(
+    posts << Post.create!(
         title: Faker::Lorem.sentence,
         image_url: Faker::LoremFlickr.image,
+        category: categories.sample,
         content: Faker::Lorem.paragraphs
     )
 end
@@ -25,8 +26,10 @@ end
 authors = []
 5.times do
     authors << Author.create!(
+        # author_id: @author,
         firstname: Faker::Name.first_name,
         lastname: Faker::Name.last_name,
+        image_url: Faker::Avatar.image,
         email: Faker::Internet.email,
         password: Faker::Internet.password
     )

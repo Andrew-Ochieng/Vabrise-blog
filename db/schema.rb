@@ -17,14 +17,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_14_090233) do
   create_table "authors", force: :cascade do |t|
     t.string "firstname"
     t.string "lastname"
+    t.string "image_url"
     t.string "email"
     t.string "password_digest"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "categories", force: :cascade do |t|
-    t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -38,31 +33,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_14_090233) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "post_categories", force: :cascade do |t|
-    t.integer "post_id"
-    t.integer "category_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "post_tags", force: :cascade do |t|
-    t.integer "post_id"
-    t.integer "tag_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "posts", force: :cascade do |t|
-    t.integer "author_id"
     t.string "title"
     t.string "image_url"
     t.text "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "tags", force: :cascade do |t|
-    t.string "tag"
+    t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
