@@ -53,4 +53,6 @@ gem 'devise'
 gem "active_model_serializers"
 
 
+# faker
+gem 'faker'
 
