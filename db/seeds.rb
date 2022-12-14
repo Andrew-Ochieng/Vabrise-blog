@@ -16,6 +16,7 @@ categories = ["Software Development", "Cyber Security", "Graphics Design", "Tech
 posts = []
 10.times do
     posts << Post.create!(
+        author_id: @author,
         title: Faker::Lorem.sentence,
         image_url: Faker::LoremFlickr.image,
         category: categories.sample,
@@ -23,10 +24,10 @@ posts = []
     )
 end
 
+
 authors = []
 5.times do
     authors << Author.create!(
-        # author_id: @author,
         firstname: Faker::Name.first_name,
         lastname: Faker::Name.last_name,
         image_url: Faker::Avatar.image,
@@ -36,10 +37,7 @@ authors = []
 end
 
     
-# tags = []
-# 10.times do
-#     tags << Tag.create(Faker::Lorem.word)
-# end
+
 
 
 
