@@ -81,6 +81,9 @@ test:
 #
 production:
   <<: *default
-  database: vabrise_api_production
-  username: vabrise_api
-  password: <%= ENV["VABRISE_API_DATABASE_PASSWORD"] %>
+  # database: vabrise_api_production
+  # username: vabrise_api
+  # password: <%= ENV["VABRISE_API_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
+
+  

@@ -31,7 +31,7 @@ posts = []
     posts << Post.create!(
         author_id: authors.sample.id,
         title: Faker::Lorem.sentence,
-        image_url: Faker::LoremFlickr.image,
+        image_url: Faker::Avatar.image,
         category: categories.sample,
         content: Faker::Lorem.paragraph(sentence_count: rand(30..60))
     )
