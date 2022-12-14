@@ -15,7 +15,7 @@ categories = ["Software Development", "Cyber Security", "Graphics Design", "Tech
 
 
 authors = []
-5.times do
+6.times do
     authors << Author.create!(
         firstname: Faker::Name.first_name,
         lastname: Faker::Name.last_name,
@@ -27,7 +27,7 @@ end
 
 
 posts = []
-10.times do
+6.times do
     posts << Post.create!(
         author_id: authors.sample.id,
         title: Faker::Lorem.sentence,
