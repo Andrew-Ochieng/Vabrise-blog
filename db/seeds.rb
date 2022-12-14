@@ -13,17 +13,6 @@ puts "🌱 Seeding data.."
 
 categories = ["Software Development", "Cyber Security", "Graphics Design", "Tech & Business"]
 
-posts = []
-10.times do
-    posts << Post.create!(
-        author_id: @author,
-        title: Faker::Lorem.sentence,
-        image_url: Faker::LoremFlickr.image,
-        category: categories.sample,
-        content: Faker::Lorem.paragraphs
-    )
-end
-
 
 authors = []
 5.times do
@@ -36,10 +25,18 @@ authors = []
     )
 end
 
+
+posts = []
+10.times do
+    posts << Post.create!(
+        author_id: authors.sample.id,
+        title: Faker::Lorem.sentence,
+        image_url: Faker::LoremFlickr.image,
+        category: categories.sample,
+        content: Faker::Lorem.paragraph(sentence_count: rand(30..60))
+    )
+end
     
-
-
-
 
 
 
